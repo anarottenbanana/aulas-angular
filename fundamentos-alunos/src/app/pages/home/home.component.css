@@ -1,0 +1,19 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.divCards {
+    background-color: grey;
+    border: solid, 3px, black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+ }
+
+ nome, turma, notaFinal {
+    font-weight: bold;
+ }
+
