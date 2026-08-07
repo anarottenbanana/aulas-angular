@@ -8,13 +8,6 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  titulo: string = 'Card Alunos'
-
-   nome: string = 'Ana'
-   turma: string = 'Adas dEV 2026'
-   status: string = 'Aprovado'
-   notaFinal: number = 9.5
-   idade: number = 17
-   imagem: string = 'https://i.redd.it/x9269yq508j71.jpg'
-
+  titulo: string = 'Seja bem vindo!'
+  subtitulo: string = 'Sistema para gerenciamento escolar'
 }

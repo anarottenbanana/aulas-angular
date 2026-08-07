@@ -1,0 +1,20 @@
+
+.div-header {
+    display: flex;
+    background-color: lightblue;
+    border-bottom: solid, 2px, black;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+h1 {
+    margin-left: 8px;
+}
+h3 {
+    margin-right: 8px;
+}
+
+.div-home-alunos {
+    display: flex;
+}

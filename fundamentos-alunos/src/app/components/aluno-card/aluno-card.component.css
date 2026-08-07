@@ -9,11 +9,6 @@
     background-color: blue;
 }
 
-.card-cabecalho img {
-    width: 100%;
-    height: 100%;
-}
-
 .card-conteudo {
     padding: 0 16px;
 }
@@ -27,16 +22,4 @@
 .status {
     text-align: center;
     font-weight: 600;
-}
-
-.lista-cards {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.home {
-    height: 100%;
-    background-color: rgb(52, 51, 51);
-    padding: 16px;
 }
