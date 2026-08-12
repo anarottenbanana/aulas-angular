@@ -4,10 +4,30 @@
         <h2>lista de alunos</h2>
     </div>
 
+    @if (alunos.length === 0) {
+            <p>Nenhum registro encontrado no banco</p>
+        }
+
     <div class="lista-cards">
 
-        <app-aluno-card [aluno]="aluno1"></app-aluno-card>
+        @for (objetoAluno of alunos; track $index) {
+        <app-aluno-card [aluno]="objetoAluno"></app-aluno-card>
+        }
+
+        @for (item of alunos; track $index) {
+            
+        }
+
+        <table border="1">
+                <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
 
     </div>
+
+    <!-- estruturar a tabela para depois colocar o tr da tabela dentro do for -->
 
 </div>

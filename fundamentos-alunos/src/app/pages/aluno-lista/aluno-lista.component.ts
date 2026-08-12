@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Aluno } from '../../interfaces/aluno';
 import { AlunoCardComponent } from "../../components/aluno-card/aluno-card.component";
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-aluno-lista',
@@ -10,24 +11,25 @@ import { AlunoCardComponent } from "../../components/aluno-card/aluno-card.compo
 })
 export class AlunoListaComponent {
 
-   aluno1: Aluno = {
-    'nome': 'Ana',
+  modoExibicao: string = 'cards'
+
+  alunos: Aluno[] = [
+    {'nome': 'Ana',
     'turma': 'Adas Dev 2026',
-    'status': 'Aprovado',
-    'notaFinal': 9.5,
+    'notaFinal': 7.5,
     'idade': 17,
     'imagem': 'https://i.redd.it/x9269yq508j71.jpg',
     'email': 'teste'
-  }
-
-  aluno2: Aluno = {
-    'nome': 'Peloso',
+  },
+    {'nome': 'Peloso',
     'turma': 'Gatos Dev 2026',
-    'status': 'Aprovado',
     'notaFinal': 10,
     'idade': 10,
     'imagem': '',
     'email': 'teste'
-  }
+    }
+  ]
+
+  
 
 }
