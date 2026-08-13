@@ -11,25 +11,40 @@ import { NgClass } from '@angular/common';
 })
 export class AlunoListaComponent {
 
-  modoExibicao: string = 'cards'
+  modoExibicao: string = ''
+  filtrar: string =''
 
   alunos: Aluno[] = [
-    {'nome': 'Ana',
-    'turma': 'Adas Dev 2026',
-    'notaFinal': 7.5,
-    'idade': 17,
-    'imagem': 'https://i.redd.it/x9269yq508j71.jpg',
-    'email': 'teste'
+    {nome: 'Ana',
+    turma: 'Adas Dev 2026',
+    notaFinal: 7.5,
+    idade: 17,
+    imagem: 'https://i.redd.it/x9269yq508j71.jpg',
+    email: 'slamanohaha55@gmail.com'
   },
-    {'nome': 'Peloso',
-    'turma': 'Gatos Dev 2026',
-    'notaFinal': 10,
-    'idade': 10,
-    'imagem': '',
-    'email': 'teste'
+    {nome: 'Peloso',
+    turma: 'Gatos Dev 2026',
+    notaFinal: 10,
+    idade: 10,
+    imagem: '',
+    email: 'pelosolindo@catmail.com'
     }
   ]
 
-  
+  modoTabela(): void {
+    this.modoExibicao = 'tabela'
+  }
+
+  modoCard(): void {
+    this.modoExibicao = 'card'
+  }
+
+  filtrarReprovados(): void {
+    this.filtrar = 'reprovados'
+  }
+
+  filtrarAprovados(): void {
+    this.filtrar = 'aprovados'
+  }
 
 }

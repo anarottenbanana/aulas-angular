@@ -4,30 +4,60 @@
         <h2>lista de alunos</h2>
     </div>
 
+    <button (click)="modoTabela()">exibir em tabela</button>
+    <button (click)="modoCard()">exibir em card</button>
+    <span>Filtrar por:</span>
+    <button>Todos</button>
+    <button (click)="filtrarAprovados()">Aprovados</button>
+    <button (click)="filtrarReprovados()">Reprovados</button>
+
     @if (alunos.length === 0) {
-            <p>Nenhum registro encontrado no banco</p>
-        }
+    <p>Nenhum registro encontrado no banco</p>
+    } @else {
 
+    @if (modoExibicao == 'card') {
     <div class="lista-cards">
-
         @for (objetoAluno of alunos; track $index) {
         <app-aluno-card [aluno]="objetoAluno"></app-aluno-card>
         }
-
-        @for (item of alunos; track $index) {
-            
-        }
-
-        <table border="1">
-                <thead>
-                    <tr>
-                        <th></th>
-                    </tr>
-                </thead>
-            </table>
-
     </div>
+    } @if (modoExibicao == 'tabela') {
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>turma</th>
+                    <th>nota final</th>
+                    <th>status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (aluno of alunos; track $index) {
+                <tr>
+                    <td>{{ aluno.nome }}</td>
+                    <td>{{ aluno.turma }}</td>
+                    <td>{{ aluno.notaFinal}}</td>
+                    <td>{{ aluno.notaFinal >= 7 ? 'Aprovado' : 'Reprovado' }}</td>
+                </tr>
+                }
 
-    <!-- estruturar a tabela para depois colocar o tr da tabela dentro do for -->
+            </tbody>
+        </table>
+    </div>
+    }
+    @if (filtrar == 'aprovados') {
+        
+    }
+    }
+
+
+
+
+
+
+
+
+
 
 </div>

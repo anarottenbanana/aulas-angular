@@ -31,3 +31,23 @@ p {
     color: white;
     text-align: center;
 }
+
+table {
+    background-color: #fff;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th {
+    padding: 8px 16px;
+}
+
+table thead tr {
+    background-color: #f62f50;
+    color: #fff;
+    text-align: left;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #f7bdbd;
+}
