@@ -4,20 +4,17 @@
         <h2>lista de alunos</h2>
     </div>
 
-    <button (click)="modoTabela()">exibir em tabela</button>
-    <button (click)="modoCard()">exibir em card</button>
-    <span>Filtrar por:</span>
-    <button>Todos</button>
-    <button (click)="filtrarAprovados()">Aprovados</button>
-    <button (click)="filtrarReprovados()">Reprovados</button>
+    <button (click)="trocarModoExibicao()">
+        {{ modoExibicao === 'tabela' ? 'ver cards' : 'ver tabela'}}
+    </button>
 
-    @if (alunos.length === 0) {
+    @if (listaAlunosFiltro.length === 0) {
     <p>Nenhum registro encontrado no banco</p>
     } @else {
 
     @if (modoExibicao == 'card') {
     <div class="lista-cards">
-        @for (objetoAluno of alunos; track $index) {
+        @for (objetoAluno of listaAlunosFiltro; track $index) {
         <app-aluno-card [aluno]="objetoAluno"></app-aluno-card>
         }
     </div>
@@ -33,7 +30,7 @@
                 </tr>
             </thead>
             <tbody>
-                @for (aluno of alunos; track $index) {
+                @for (aluno of listaAlunosFiltro; track $index) {
                 <tr>
                     <td>{{ aluno.nome }}</td>
                     <td>{{ aluno.turma }}</td>
@@ -46,18 +43,5 @@
         </table>
     </div>
     }
-    @if (filtrar == 'aprovados') {
-        
     }
-    }
-
-
-
-
-
-
-
-
-
-
 </div>

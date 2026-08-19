@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Aluno } from '../../interfaces/aluno';
 import { AlunoCardComponent } from "../../components/aluno-card/aluno-card.component";
-import { NgClass } from '@angular/common';
+import { AlunoService } from '../../services/aluno.service';
 
 @Component({
   selector: 'app-aluno-lista',
@@ -11,40 +11,26 @@ import { NgClass } from '@angular/common';
 })
 export class AlunoListaComponent {
 
-  modoExibicao: string = ''
-  filtrar: string =''
+  modoExibicao: string = 'tabela'
+  private readonly alunoService = inject(AlunoService)
+  listaAlunosFiltro: Aluno[] = []
 
-  alunos: Aluno[] = [
-    {nome: 'Ana',
-    turma: 'Adas Dev 2026',
-    notaFinal: 7.5,
-    idade: 17,
-    imagem: 'https://i.redd.it/x9269yq508j71.jpg',
-    email: 'slamanohaha55@gmail.com'
-  },
-    {nome: 'Peloso',
-    turma: 'Gatos Dev 2026',
-    notaFinal: 10,
-    idade: 10,
-    imagem: '',
-    email: 'pelosolindo@catmail.com'
+  ngOnInit(): void {
+
+    this.listaAlunosFiltro = this.alunoService.listar()
+  }
+
+
+
+  trocarModoExibicao(): void {
+
+    if (this.modoExibicao === 'tabela') {
+      this.modoExibicao = 'cards'
+    } else if (this.modoExibicao === 'cards') {
+      this.modoExibicao = 'tabela'
     }
-  ]
-
-  modoTabela(): void {
-    this.modoExibicao = 'tabela'
   }
 
-  modoCard(): void {
-    this.modoExibicao = 'card'
-  }
 
-  filtrarReprovados(): void {
-    this.filtrar = 'reprovados'
-  }
-
-  filtrarAprovados(): void {
-    this.filtrar = 'aprovados'
-  }
 
 }
